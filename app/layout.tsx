@@ -1,11 +1,13 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist, Geist_Mono, Playfair_Display, Source_Sans_3 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './global.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const _geist = Geist({ subsets: ["latin"], variable: '--font-geist' });
+const _geistMono = Geist_Mono({ subsets: ["latin"], variable: '--font-geist-mono' });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-display' });
+const sourceSans = Source_Sans_3({ subsets: ["latin"], variable: '--font-body' });
 
 export const metadata: Metadata = {
   title: 'Priyanka Belbase | GIS Analyst & PhD Researcher',
@@ -44,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`${_geist.variable} ${_geistMono.variable} ${playfair.variable} ${sourceSans.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>
