@@ -1,15 +1,30 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Mail, Linkedin, GraduationCap } from 'lucide-react';
+import { Mail, Linkedin, GraduationCap, Trophy, Award, Users } from 'lucide-react';
 
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState('hero');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const navItems = [
+    { id: 'hero', label: 'Home' },
+    { id: 'award', label: 'Award', icon: Trophy },
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'certifications', label: 'Certs', icon: Award },
+    { id: 'affiliations', label: 'Community', icon: Users },
+    { id: 'contact', label: 'Contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'contact'];
+      setScrolled(window.scrollY > 20);
+      
+      const sections = navItems.map(item => item.id);
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -35,44 +50,52 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-        <h1 className="text-lg sm:text-xl font-semibold text-foreground">Priyanka Belbase</h1>
+    <nav className={`sticky top-0 z-50 border-b border-border transition-all duration-300 ${
+      scrolled ? 'bg-background/95 backdrop-blur-md shadow-sm' : 'bg-background/80 backdrop-blur-sm'
+    }`}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+        <button 
+          onClick={() => scrollToSection('hero')}
+          className="text-lg sm:text-xl font-bold text-foreground hover:text-accent transition-colors flex items-center gap-2"
+        >
+          <span className="text-accent">🌍</span>
+          <span>PB</span>
+        </button>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-6 lg:gap-8 items-center">
-          {['hero', 'about', 'skills', 'experience', 'projects', 'contact'].map((section) => (
+        <div className="hidden lg:flex gap-1 items-center">
+          {navItems.map((item) => (
             <button
-              key={section}
-              onClick={() => scrollToSection(section)}
-              className={`capitalize text-sm font-medium transition-colors ${
-                activeSection === section
-                  ? 'text-accent border-b-2 border-accent'
-                  : 'text-muted-foreground hover:text-foreground'
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeSection === item.id
+                  ? 'text-accent-foreground bg-accent shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
               }`}
             >
-              {section}
+              {item.label}
             </button>
           ))}
         </div>
 
         {/* Social Links - Desktop */}
-        <div className="hidden md:flex gap-4 items-center">
-          <a href="https://www.linkedin.com/in/priyanka-belbase-72833023b/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" title="LinkedIn">
-            <Linkedin size={20} />
+        <div className="hidden lg:flex gap-3 items-center">
+          <a href="https://www.linkedin.com/in/priyanka-belbase-72833023b/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all" title="LinkedIn">
+            <Linkedin size={18} />
           </a>
-          <a href="https://scholar.google.com/citations?user=bkSmlQ8AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" title="Google Scholar">
-            <GraduationCap size={20} />
+          <a href="https://scholar.google.com/citations?user=bkSmlQ8AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all" title="Google Scholar">
+            <GraduationCap size={18} />
           </a>
-          <a href="mailto:belbase.priyanka@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors" title="Email">
-            <Mail size={20} />
+          <a href="mailto:belbase.priyanka@gmail.com" className="p-2 rounded-lg text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all" title="Email">
+            <Mail size={18} />
           </a>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-foreground hover:text-accent transition-colors"
+          className="lg:hidden p-2 text-foreground hover:text-accent hover:bg-accent/10 rounded-lg transition-all"
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? (
@@ -89,29 +112,29 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background">
-          <div className="px-4 py-4 space-y-3">
-            {['hero', 'about', 'skills', 'experience', 'projects', 'contact'].map((section) => (
+        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-md">
+          <div className="px-4 py-4 space-y-2">
+            {navItems.map((item) => (
               <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className={`block w-full text-left px-4 py-2 rounded-lg capitalize text-sm font-medium transition-colors ${
-                  activeSection === section
-                    ? 'text-accent bg-accent/10'
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`block w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                  activeSection === item.id
+                    ? 'text-accent-foreground bg-accent'
                     : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 }`}
               >
-                {section}
+                {item.label}
               </button>
             ))}
             <div className="flex gap-4 pt-4 border-t border-border justify-center">
-              <a href="https://www.linkedin.com/in/priyanka-belbase-72833023b/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2" title="LinkedIn">
+              <a href="https://www.linkedin.com/in/priyanka-belbase-72833023b/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all" title="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="https://scholar.google.com/citations?user=bkSmlQ8AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2" title="Google Scholar">
+              <a href="https://scholar.google.com/citations?user=bkSmlQ8AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all" title="Google Scholar">
                 <GraduationCap size={20} />
               </a>
-              <a href="mailto:belbase.priyanka@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors p-2" title="Email">
+              <a href="mailto:belbase.priyanka@gmail.com" className="p-2 rounded-lg text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all" title="Email">
                 <Mail size={20} />
               </a>
             </div>

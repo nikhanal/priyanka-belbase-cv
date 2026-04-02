@@ -1,8 +1,11 @@
 import { Mail, Phone, MapPin, Linkedin, GraduationCap } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
+import AwardSection from '@/components/AwardSection';
 import ProjectCard from '@/components/ProjectCard';
 import PublicationsSection from '@/components/PublicationsSection';
+import CertificationsSection from '@/components/CertificationsSection';
+import AffiliationsSection from '@/components/AffiliationsSection';
 import ContactForm from '@/components/ContactForm';
 
 export default function Home() {
@@ -219,6 +222,9 @@ export default function Home() {
       <main className="max-w-6xl mx-auto">
         <HeroSection />
 
+        {/* Award Section - Featured prominently after hero */}
+        <AwardSection />
+
         {/* About Section */}
         <section id="about" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 border-t border-border">
           <div className="max-w-4xl mx-auto">
@@ -238,19 +244,19 @@ export default function Home() {
               </p>
 
               <p>
-                I'm passionate about turning raw geospatial data into meaningful insights that drive decision-making. Whether it's 
-                analyzing multi-temporal satellite imagery, conducting environmental impact assessments, or teaching GIS workflows, 
-                I approach each project with technical rigor and attention to detail.
-              </p>
+                  I'm passionate about turning raw geospatial data into meaningful insights that drive decision-making. Whether it's 
+                  analyzing multi-temporal satellite imagery, conducting environmental impact assessments, or teaching GIS workflows, 
+                  I approach each project with technical rigor and attention to detail.
+                </p>
 
-              <p>
-                When I'm not working with spatial data, I enjoy exploring new geospatial methodologies, mentoring students in GIS, 
-                and contributing to open-source geospatial projects.
-              </p>
+                <p>
+                  When I'm not working with spatial data, I enjoy exploring new geospatial methodologies, mentoring students in GIS, 
+                  and contributing to open-source geospatial projects.
+                </p>
             </div>
 
             <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-              <div className="border border-border rounded-lg p-4 sm:p-6 bg-card">
+              <div className="border border-border rounded-lg p-4 sm:p-6 bg-card hover:border-accent/50 transition-colors">
                 <p className="text-sm font-semibold text-accent mb-2">EDUCATION</p>
                 <ul className="space-y-3 text-sm">
                   <li>
@@ -268,7 +274,7 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="border border-border rounded-lg p-6 bg-card">
+              <div className="border border-border rounded-lg p-6 bg-card hover:border-accent/50 transition-colors">
                 <p className="text-sm font-semibold text-accent mb-2">CURRENT ROLE</p>
                 <p className="font-semibold text-foreground mb-2">Graduate Assistant</p>
                 <p className="text-muted-foreground text-sm">Environment & Earth Remote Sensing Lab</p>
@@ -276,7 +282,7 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm mt-2">Aug 2022 – Present</p>
               </div>
 
-              <div className="border border-border rounded-lg p-6 bg-card">
+              <div className="border border-border rounded-lg p-6 bg-card hover:border-accent/50 transition-colors">
                 <p className="text-sm font-semibold text-accent mb-2">EXPERIENCE</p>
                 <p className="font-semibold text-foreground mb-2">7+ Years</p>
                 <p className="text-muted-foreground text-sm">Geospatial data management, remote sensing, and spatial analysis across government, private sector, and academic institutions</p>
@@ -298,7 +304,7 @@ export default function Home() {
                     {category.skills.map((skill, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1.5 bg-muted text-muted-foreground rounded-full text-sm font-medium hover:bg-accent/20 transition-colors"
+                        className="px-3 py-1.5 bg-muted text-muted-foreground rounded-full text-sm font-medium hover:bg-accent/20 hover:text-accent transition-colors"
                       >
                         {skill}
                       </span>
@@ -316,8 +322,8 @@ export default function Home() {
                     <span className="text-foreground">ArcGIS Suite (Pro, Online, Enterprise)</span>
                     <span className="text-accent font-semibold text-sm">Expert</span>
                   </div>
-                  <div className="h-2 bg-muted rounded-full">
-                    <div className="h-2 bg-accent rounded-full" style={{ width: '95%' }}></div>
+                  <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                    <div className="h-full bg-accent rounded-full" style={{ width: '95%' }} />
                   </div>
                 </div>
                 <div>
@@ -325,8 +331,8 @@ export default function Home() {
                     <span className="text-foreground">Remote Sensing & Image Classification</span>
                     <span className="text-accent font-semibold text-sm">Advanced</span>
                   </div>
-                  <div className="h-2 bg-muted rounded-full">
-                    <div className="h-2 bg-accent rounded-full" style={{ width: '90%' }}></div>
+                  <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                    <div className="h-full bg-accent rounded-full" style={{ width: '90%' }} />
                   </div>
                 </div>
                 <div>
@@ -334,8 +340,8 @@ export default function Home() {
                     <span className="text-foreground">Python & R Programming</span>
                     <span className="text-accent font-semibold text-sm">Advanced</span>
                   </div>
-                  <div className="h-2 bg-muted rounded-full">
-                    <div className="h-2 bg-accent rounded-full" style={{ width: '80%' }}></div>
+                  <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                    <div className="h-full bg-accent rounded-full" style={{ width: '80%' }} />
                   </div>
                 </div>
                 <div>
@@ -343,8 +349,8 @@ export default function Home() {
                     <span className="text-foreground">Spatial Database Management</span>
                     <span className="text-accent font-semibold text-sm">Advanced</span>
                   </div>
-                  <div className="h-2 bg-muted rounded-full">
-                    <div className="h-2 bg-accent rounded-full" style={{ width: '88%' }}></div>
+                  <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                    <div className="h-full bg-accent rounded-full" style={{ width: '88%' }} />
                   </div>
                 </div>
               </div>
@@ -359,14 +365,14 @@ export default function Home() {
             
             <div className="space-y-6 sm:space-y-8">
               {experiences.map((exp, idx) => (
-                <div key={idx} className="border-l-2 border-accent pl-4 sm:pl-6 md:pl-8 pb-6 sm:pb-8">
+                <div key={idx} className="border-l-2 border-accent pl-4 sm:pl-6 md:pl-8 pb-6 sm:pb-8 hover:border-l-4 transition-all">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 sm:gap-4 mb-3 sm:mb-4">
                     <div>
                       <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground">{exp.title}</h3>
                       <p className="text-accent font-medium">{exp.company}</p>
                       <p className="text-muted-foreground text-sm">{exp.location}</p>
                     </div>
-                    <span className="text-muted-foreground text-sm whitespace-nowrap">{exp.period}</span>
+                    <span className="text-muted-foreground text-sm whitespace-nowrap bg-muted px-3 py-1 rounded-full">{exp.period}</span>
                   </div>
                   
                   <ul className="space-y-2 text-muted-foreground">
@@ -398,6 +404,12 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Certifications Section */}
+        <CertificationsSection />
+
+        {/* Affiliations Section */}
+        <AffiliationsSection />
+
         {/* Contact Section */}
         <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 border-t border-border">
           <div className="max-w-4xl mx-auto">
@@ -405,80 +417,80 @@ export default function Home() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
               {/* Contact Information */}
-              <div className="space-y-8">
-                <div>
-                  <p className="text-muted-foreground mb-6">
-                    I'm always open to collaboration and new opportunities. Whether you need GIS analysis, remote sensing expertise, 
-                    or want to discuss geospatial research, feel free to reach out.
-                  </p>
-                </div>
+                <div className="space-y-8">
+                  <div>
+                    <p className="text-muted-foreground mb-6">
+                      I'm always open to collaboration and new opportunities. Whether you need GIS analysis, remote sensing expertise, 
+                      or want to discuss geospatial research, feel free to reach out.
+                    </p>
+                  </div>
 
-                <div className="space-y-3 sm:space-y-4">
-                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-4 sm:mb-6">Contact Information</h3>
-                  
-                  <a
-                    href="mailto:belbase.priyanka@gmail.com"
-                    className="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-accent/50 transition-colors group bg-card"
-                  >
-                    <Mail className="text-accent group-hover:scale-110 transition-transform" size={24} />
-                    <div>
-                      <p className="text-muted-foreground text-sm">Email</p>
-                      <p className="text-foreground font-medium">belbase.priyanka@gmail.com</p>
+                  <div className="space-y-3 sm:space-y-4">
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-4 sm:mb-6">Contact Information</h3>
+                    
+                    <a
+                      href="mailto:belbase.priyanka@gmail.com"
+                      className="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-accent/50 transition-colors group bg-card"
+                    >
+                      <Mail className="text-accent" size={24} />
+                      <div>
+                        <p className="text-muted-foreground text-sm">Email</p>
+                        <p className="text-foreground font-medium">belbase.priyanka@gmail.com</p>
+                      </div>
+                    </a>
+
+                    <a
+                      href="tel:+16825325155"
+                      className="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-accent/50 transition-colors group bg-card"
+                    >
+                      <Phone className="text-accent" size={24} />
+                      <div>
+                        <p className="text-muted-foreground text-sm">Phone</p>
+                        <p className="text-foreground font-medium">+1 (682) 532-5155</p>
+                      </div>
+                    </a>
+
+                    <div className="flex items-center gap-4 p-4 border border-border rounded-lg bg-card">
+                      <MapPin className="text-accent" size={24} />
+                      <div>
+                        <p className="text-muted-foreground text-sm">Location</p>
+                        <p className="text-foreground font-medium">Miami, Florida</p>
+                      </div>
                     </div>
-                  </a>
+                  </div>
 
-                  <a
-                    href="tel:+16825325155"
-                    className="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-accent/50 transition-colors group bg-card"
-                  >
-                    <Phone className="text-accent group-hover:scale-110 transition-transform" size={24} />
-                    <div>
-                      <p className="text-muted-foreground text-sm">Phone</p>
-                      <p className="text-foreground font-medium">+1 (682) 532-5155</p>
-                    </div>
-                  </a>
-
-                  <div className="flex items-center gap-4 p-4 border border-border rounded-lg bg-card">
-                    <MapPin className="text-accent" size={24} />
-                    <div>
-                      <p className="text-muted-foreground text-sm">Location</p>
-                      <p className="text-foreground font-medium">Miami, Florida</p>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">Connect With Me</h3>
+                    <div className="flex gap-4">
+                      <a
+                        href="https://www.linkedin.com/in/priyanka-belbase-72833023b/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 border border-border rounded-lg text-muted-foreground hover:text-accent hover:border-accent transition-colors bg-card"
+                        title="LinkedIn"
+                      >
+                        <Linkedin size={24} />
+                      </a>
+                      <a
+                        href="https://scholar.google.com/citations?user=bkSmlQ8AAAAJ&hl=en&oi=ao"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 border border-border rounded-lg text-muted-foreground hover:text-accent hover:border-accent transition-colors bg-card"
+                        title="Google Scholar"
+                      >
+                        <GraduationCap size={24} />
+                      </a>
                     </div>
                   </div>
                 </div>
-
-                <div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">Connect With Me</h3>
-                  <div className="flex gap-4">
-                    <a
-                      href="https://www.linkedin.com/in/priyanka-belbase-72833023b/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 border border-border rounded-lg text-muted-foreground hover:text-accent hover:border-accent transition-colors bg-card"
-                      title="LinkedIn"
-                    >
-                      <Linkedin size={24} />
-                    </a>
-                    <a
-                      href="https://scholar.google.com/citations?user=bkSmlQ8AAAAJ&hl=en&oi=ao"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 border border-border rounded-lg text-muted-foreground hover:text-accent hover:border-accent transition-colors bg-card"
-                      title="Google Scholar"
-                    >
-                      <GraduationCap size={24} />
-                    </a>
-                  </div>
-                </div>
-              </div>
 
               {/* Contact Form */}
               <ContactForm />
             </div>
 
             <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-border text-center text-muted-foreground">
-              <p className="text-sm sm:text-base">© 2024 Priyanka Belbase. All rights reserved.</p>
-              <p className="text-xs sm:text-sm mt-2">Built with passion for geospatial science</p>
+              <p className="text-sm sm:text-base">© 2026 Priyanka Belbase. All rights reserved.</p>
+              <p className="text-xs sm:text-sm mt-2">Built with passion for geospatial science 🌍</p>
             </div>
           </div>
         </section>
