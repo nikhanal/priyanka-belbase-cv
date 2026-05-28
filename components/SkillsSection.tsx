@@ -12,44 +12,49 @@ import {
 
 const SKILL_CARDS = [
   {
-    title: 'GIS & Remote Sensing',
+    title: 'GIS Platforms',
     icon: Globe2,
-    tags: ['ArcGIS Pro', 'ArcGIS Online', 'QGIS', 'ENVI', 'SNAP', 'Google Earth Engine'],
+    tags: ['ArcGIS Pro', 'ArcGIS Desktop / 10.x', 'ArcInfo', 'ArcView', 'ArcGIS Online', 'ArcGIS Enterprise', 'ArcGIS Portal', 'Experience Builder', 'QGIS', 'Google Earth Engine'],
   },
   {
     title: 'Remote Sensing Data',
     icon: Satellite,
-    tags: ['Landsat', 'Sentinel', 'Planet', 'NAIP', 'LiDAR', 'Hyperspectral'],
+    tags: ['Landsat', 'Sentinel-2', 'Planet', 'NAIP', 'MODIS', 'GEDI', 'LiDAR', 'SAR', 'DEM/DSM', 'UAV Imagery', 'Multispectral', 'Hyperspectral'],
   },
   {
     title: 'Spatial Analysis',
     icon: ChartNoAxesCombined,
-    tags: ['Raster Modeling', 'Hydrology', 'Network Analysis', 'Suitability Modeling', 'Change Detection'],
+    tags: ['Spatial Analyst', 'Network Analyst', 'Raster Modeling', 'Change Detection', 'Suitability Modeling', 'Constraints Analysis', 'Hydrology', 'Terrain Modeling', 'Geostatistics', 'Predictive Modeling'],
   },
   {
-    title: 'Field Instruments',
+    title: 'Field & Spectral Tools',
     icon: Microscope,
-    tags: ['Spectroradiometer', 'XRF', 'ICP-MS', 'Chlorophyll Sensor', 'Drone Licensed'],
+    tags: ['Handheld Spectroradiometer', 'Chlorophyll Sensing', 'XRF', 'ICP-MS', 'UV Spectrum', 'GPS Field Collection', 'Drone2Map', 'FAA Part 107'],
   },
   {
-    title: 'Programming',
+    title: 'Programming & ML',
     icon: Code2,
-    tags: ['R', 'Python', 'SPSS', 'SQL', 'PostGIS', 'ModelBuilder'],
+    tags: ['Python', 'ArcPy', 'Rasterio', 'GeoPandas', 'Pandas', 'scikit-learn', 'R', 'SQL', 'VBA', 'ArcObjects', 'SPSS', 'ModelBuilder'],
   },
   {
-    title: 'Visualization',
-    icon: BarChart3,
-    tags: ['ArcGIS Dashboards', 'Power BI', 'Tableau', 'Cartography'],
-  },
-  {
-    title: 'Agricultural Science',
-    icon: Leaf,
-    tags: ['Precision Agriculture', 'Crop Monitoring', 'Soil Nutrients', 'RCBD'],
-  },
-  {
-    title: 'Specialized',
+    title: 'Geodatabases & Data Engineering',
     icon: Database,
-    tags: ['Geodatabase Design', 'EIA/IEE', 'Technical Writing', 'GIS Training'],
+    tags: ['Enterprise Geodatabases', 'File Geodatabases', 'ArcSDE', 'PostGIS', 'PostgreSQL', 'MS SQL Server', 'MS Access', 'Versioned Editing', 'Post & Reconcile', 'ETL Pipelines', 'Metadata Standards', 'QA/QC'],
+  },
+  {
+    title: 'Web GIS & Reporting',
+    icon: BarChart3,
+    tags: ['ArcGIS Dashboards', 'ArcGIS Online Web Apps', 'Field Maps', 'Survey123', 'Power BI', 'Tableau', 'Cartography', 'Technical Reports', 'Adobe Illustrator', 'Adobe InDesign'],
+  },
+  {
+    title: 'Environmental & Domain',
+    icon: Leaf,
+    tags: ['Precision Agriculture', 'Crop Monitoring', 'EIA/IEE', 'Hazard Mapping', 'Environmental Compliance', 'Regulatory Review', 'Land-Use Planning', 'Utility Mapping', 'Flood Risk', 'Transportation Planning'],
+  },
+  {
+    title: 'Planning, CAD & Visualization',
+    icon: BarChart3,
+    tags: ['AutoCAD', 'AutoCAD Map 3D', 'CAD-to-GIS Conversion', 'CAD/BIM Workflows', 'ArcGIS CityEngine', 'ArcGIS Urban', 'Parcel Fabric', 'SketchUp', 'Miro', 'Google Earth'],
   },
 ] as const;
 

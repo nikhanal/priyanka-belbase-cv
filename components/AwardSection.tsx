@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Trophy, Play, ChevronDown, ExternalLink, Users } from 'lucide-react';
+import { Trophy, Play, ChevronDown, Users } from 'lucide-react';
 
 interface AwardData {
   title: string;
@@ -33,6 +33,16 @@ const award: AwardData = {
   fullVideoUrl: 'https://www.youtube.com/embed/nXxkhjOdih4',
   fullVideoTitle: 'Full Project Presentation (13 min)',
 };
+
+const ADDITIONAL_AWARDS = [
+  {
+    title: 'Research Partnership Program Winner',
+    organization: 'Spectral Evolution',
+    date: 'Feb 2025 – Present',
+    description:
+      'Awarded for collaborative research partnership support tied to spectral instrumentation and applied dragon fruit research.',
+  },
+] as const;
 
 export default function AwardSection() {
   const [showFullVideo, setShowFullVideo] = useState(false);
@@ -152,6 +162,20 @@ export default function AwardSection() {
             )}
           </div>
         )}
+
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          {ADDITIONAL_AWARDS.map((item) => (
+            <div key={item.title} className="rounded-xl border border-border bg-card p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <Trophy className="text-accent" size={18} />
+                <span className="text-sm font-medium text-accent">{item.organization}</span>
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+              <p className="text-sm text-muted-foreground mb-3">{item.date}</p>
+              <p className="text-sm text-muted-foreground">{item.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

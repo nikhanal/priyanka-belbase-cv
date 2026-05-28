@@ -1,11 +1,14 @@
 import { Mail, Phone, MapPin, Linkedin, GraduationCap } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
+import AwardSection from '@/components/AwardSection';
 import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import ResearchSection from '@/components/ResearchSection';
+import PublicationsSection from '@/components/PublicationsSection';
 import ProjectsSection from '@/components/ProjectsSection';
+import AffiliationsSection from '@/components/AffiliationsSection';
 import GallerySection from '@/components/GallerySection';
 import CertificationsSection from '@/components/CertificationsSection';
 import ContactForm from '@/components/ContactForm';
@@ -17,14 +20,17 @@ export default function Home() {
 
       <main>
         <HeroSection />
+        <AwardSection />
         <AboutSection />
         <SkillsSection />
         <ExperienceSection />
         <ResearchSection />
+        <PublicationsSection />
         <ProjectsSection />
 
         {/* Certifications Section */}
         <CertificationsSection />
+        <AffiliationsSection />
 
         <GallerySection />
 

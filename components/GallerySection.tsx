@@ -24,7 +24,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     caption: 'Graduate Research Symposium 2023',
   },
   {
-    src: '/gallery/GRS2024.jfif',
+    src: '/gallery/GRS2024.png',
     alt: 'GRS 2024',
     caption: 'Graduate Research Symposium 2024',
   },
@@ -39,7 +39,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     caption: 'Graduate Research Symposium 2025',
   },
   {
-    src: '/gallery/GRS2026.jfif',
+    src: '/gallery/GRS2026.png',
     alt: 'GRS 2026',
     caption: 'Graduate Research Symposium 2026',
   },
@@ -79,7 +79,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     caption: 'Research Team',
   },
   {
-    src: '/gallery/Trainner.jfif',
+    src: '/gallery/Trainner.png',
     alt: 'Training',
     caption: 'GIS Training',
   },

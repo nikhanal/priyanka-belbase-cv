@@ -3,8 +3,9 @@ import Image from 'next/image';
 
 const HERO_STATS = [
   { value: '7+', label: 'Years Experience' },
-  { value: '10+', label: 'Conferences' },
-  { value: '2', label: 'Publications' },
+  { value: '5', label: 'Peer-Reviewed Papers' },
+  { value: '10+', label: 'Conference Talks' },
+  { value: '19', label: 'Citations' },
 ];
 
 export default function HeroSection() {
@@ -25,8 +26,9 @@ export default function HeroSection() {
 
           <p className="pb-hero-sub">
             PhD Researcher in Earth System Science specializing in remote sensing, GIS analysis,
-            precision agriculture &amp; spectral diagnostics. 7+ years transforming complex
-            geospatial data into actionable insights.
+            precision agriculture, geodatabase administration &amp; spectral diagnostics. 7+ years
+            transforming complex geospatial data into actionable environmental and infrastructure
+            insights.
           </p>
 
           <div className="pb-hero-stats">

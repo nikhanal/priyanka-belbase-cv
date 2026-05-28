@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { id: 'skills', label: 'Skills', href: '#skills' },
   { id: 'experience', label: 'Experience', href: '#experience' },
   { id: 'research', label: 'Research', href: '#research' },
+  { id: 'publications', label: 'Publications', href: '#publications' },
   { id: 'projects', label: 'Projects', href: '#projects' },
   { id: 'gallery', label: 'Gallery', href: '#gallery' },
   { id: 'contact', label: 'Contact', href: '#contact' },
@@ -57,7 +58,7 @@ export default function Navigation() {
       <nav className={`pb-nav${scrolled ? ' is-scrolled' : ''}`} id="navbar">
         <div className="pb-nav-in">
           <a className="pb-nav-logo" href="#hero" onClick={closeMobileMenu}>
-            Priyanka<span>.</span>
+            Priyanka <span>Belbase</span>
           </a>
 
           <div className="pb-nav-links">
