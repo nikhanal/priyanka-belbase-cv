@@ -1,4 +1,4 @@
-import { Circle, Plus, X } from 'lucide-react';
+import { Circle, X } from 'lucide-react';
 import Image from 'next/image';
 
 type GalleryItem = {
@@ -92,6 +92,66 @@ const GALLERY_ITEMS: GalleryItem[] = [
     src: '/gallery/Paper_2.jpg',
     alt: 'Paper',
     caption: 'Research Publication',
+  },
+  {
+    src: '/gallery/WhatsApp%20Image%202026-05-28%20at%2022.55.38.jpeg',
+    alt: 'Gallery photo',
+    caption: 'Field Work 2026',
+  },
+  {
+    src: '/gallery/WhatsApp%20Image%202026-05-28%20at%2022.55.51.jpeg',
+    alt: 'Gallery photo',
+    caption: 'Field Work 2026',
+  },
+  {
+    src: '/gallery/WhatsApp%20Image%202026-05-28%20at%2022.55.53%20(1).jpeg',
+    alt: 'Gallery photo',
+    caption: 'Field Work 2026',
+  },
+  {
+    src: '/gallery/WhatsApp%20Image%202026-05-28%20at%2022.55.53%20(2).jpeg',
+    alt: 'Gallery photo',
+    caption: 'Field Work 2026',
+  },
+  {
+    src: '/gallery/WhatsApp%20Image%202026-05-28%20at%2022.55.53.jpeg',
+    alt: 'Gallery photo',
+    caption: 'Field Work 2026',
+  },
+  {
+    src: '/gallery/WhatsApp%20Image%202026-05-28%20at%2022.55.54%20(1).jpeg',
+    alt: 'Gallery photo',
+    caption: 'Field Work 2026',
+  },
+  {
+    src: '/gallery/WhatsApp%20Image%202026-05-28%20at%2022.55.54.jpeg',
+    alt: 'Gallery photo',
+    caption: 'Field Work 2026',
+  },
+  {
+    src: '/gallery/WhatsApp%20Image%202026-05-28%20at%2022.55.59%20(1).jpeg',
+    alt: 'Gallery photo',
+    caption: 'Field Work 2026',
+  },
+  {
+    src: '/gallery/WhatsApp%20Image%202026-05-28%20at%2022.55.59.jpeg',
+    alt: 'Gallery photo',
+    caption: 'Field Work 2026',
+  },
+  {
+    src: '/gallery/WhatsApp%20Image%202026-05-28%20at%2022.56.00%20(1).jpeg',
+    alt: 'Gallery photo',
+    caption: 'Field Work 2026',
+  },
+  {
+    src: '/gallery/WhatsApp%20Image%202026-05-28%20at%2022.56.00.jpeg',
+    alt: 'Gallery photo',
+    caption: 'Field Work 2026',
+  },
+  {
+    src: '/gallery/WhatsApp%20Image%202026-05-28%20at%2022.56.01.jpeg',
+    alt: 'Gallery photo',
+    caption: 'Field Work 2026',
   },
 ];
 
